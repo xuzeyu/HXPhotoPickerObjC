@@ -7,8 +7,8 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "SilenceLove" => "topy-123@qq.com" }
 
-  s.platform     = :ios, "8.0"
-  s.ios.deployment_target = "8.0"
+  s.platform     = :ios, "9.0"
+  s.ios.deployment_target = "9.0"
   s.source       = { :git => "https://github.com/xuzeyu/HXPhotoPickerObjC.git", :tag => "#{s.version}" }
 
   s.framework    = 'UIKit','Photos','PhotosUI'

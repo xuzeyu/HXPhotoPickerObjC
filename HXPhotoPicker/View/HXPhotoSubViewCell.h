@@ -49,6 +49,10 @@
 @property (assign, nonatomic) BOOL deleteCellShowAlert;
 
 @property (assign, nonatomic) NSInteger index;
+
+/// 添加按钮图片的大小
+@property (nonatomic, assign) CGSize addImageSize;
+
 // 重新下载
 - (void)againDownload;
 - (void)resetNetworkImage;

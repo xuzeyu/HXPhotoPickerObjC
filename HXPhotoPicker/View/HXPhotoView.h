@@ -103,6 +103,22 @@ typedef NS_ENUM(NSUInteger, HXPhotoViewPreViewShowStyle) {
 @property (assign, nonatomic) BOOL adaptiveDarkness;
 /// HXPhotoView最大高度，默认屏幕高度
 @property (assign, nonatomic) CGFloat maximumHeight;
+
+/// Cell的边框颜色
+@property (nonatomic, strong) UIColor *borderColor;
+/// Cell的边框圆角
+@property (nonatomic, assign) CGFloat cornerRadius;
+/// Cell的边框宽度
+@property (nonatomic, assign) CGFloat borderWidth;
+/// Cell的masksToBounds
+@property (nonatomic, assign) BOOL masksToBounds;
+/// 按钮的大小
+@property (nonatomic, assign) CGSize itemSize;
+/// 添加按钮图片的大小
+@property (nonatomic, assign) CGSize addImageSize;
+/// 只能拍摄video
+@property (nonatomic, assign) BOOL onlyCamera;
+
 /// 跳转相册 如果需要选择相机/相册时 还是需要选择
 - (void)goPhotoViewController;
 /// 跳转相册 过滤掉选择 - 不管需不需要选择 直接前往相册

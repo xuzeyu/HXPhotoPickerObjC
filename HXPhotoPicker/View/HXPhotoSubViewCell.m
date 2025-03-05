@@ -385,7 +385,16 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.imageView.frame = self.bounds;
+    if (!CGSizeEqualToSize(CGSizeMake(0, 0), self.addImageSize)) {
+        CGFloat width = self.addImageSize.width;
+        CGFloat height = self.addImageSize.height;
+        CGFloat x = (self.bounds.size.width - width)/2.0;
+        CGFloat y = (self.bounds.size.height - height)/2.0;
+        self.imageView.frame = CGRectMake( x, y, width, height);
+        self.imageView.center = self.center;
+    }else {
+        self.imageView.frame = self.bounds;
+    }
     
     self.stateLb.frame = CGRectMake(0, self.hx_h - 18, self.hx_w - 4, 18);
     self.bottomMaskView.frame = CGRectMake(0, self.hx_h - 25, self.hx_w, 25);

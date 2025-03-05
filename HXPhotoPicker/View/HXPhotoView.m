@@ -305,6 +305,7 @@
             HXPhotoSubViewCell *addCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"addCell" forIndexPath:indexPath];
             addCell.index = indexPath.item;
             addCell.model = self.addModel;
+            addCell.addImageSize = self.addImageSize;
             return addCell;
         }
     }
@@ -320,6 +321,12 @@
     cell.showDeleteNetworkPhotoAlert = self.showDeleteNetworkPhotoAlert;
     cell.deleteCellShowAlert = self.deleteCellShowAlert;
     cell.hideDeleteButton = self.hideDeleteButton;
+    
+    //新增加
+    cell.contentView.layer.borderColor = self.borderColor.CGColor;
+    cell.contentView.layer.cornerRadius = self.cornerRadius;
+    cell.contentView.layer.borderWidth = self.borderWidth;
+    cell.contentView.layer.masksToBounds = self.masksToBounds;
     return cell;
 }
  
@@ -461,6 +468,12 @@
  添加按钮点击事件
  */
 - (void)goPhotoViewController {
+    //新增加
+    if (self.onlyCamera) {
+        [self goCameraViewController];
+        return;
+    }
+    
     if (self.outerCamera) {
         HXPhotoBottomViewModel *shootingModel = [[HXPhotoBottomViewModel alloc] init];
         shootingModel.subTitleDarkColor = [UIColor hx_colorWithHexStr:@"#999999"];
@@ -1073,6 +1086,11 @@
         }
     }
     self.lastWidth = self.hx_w;
+    
+    //新增加
+    if (!CGSizeEqualToSize(CGSizeMake(0, 0), self.itemSize)) {
+        self.flowLayout.itemSize = self.itemSize;
+    }
 }
 
 - (void)layoutSubviews {
