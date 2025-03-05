@@ -305,7 +305,13 @@
             HXPhotoSubViewCell *addCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"addCell" forIndexPath:indexPath];
             addCell.index = indexPath.item;
             addCell.model = self.addModel;
+            
+            //新增加
             addCell.addImageSize = self.addImageSize;
+            addCell.contentView.layer.borderColor = self.borderColor.CGColor;
+            addCell.contentView.layer.cornerRadius = self.cornerRadius;
+            addCell.contentView.layer.borderWidth = self.borderWidth;
+            addCell.contentView.layer.masksToBounds = self.masksToBounds;
             return addCell;
         }
     }
