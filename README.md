@@ -7,6 +7,8 @@
 ## 如何导入
 ```
 pod 'HXPhotoPickerObjC', :git => 'https://github.com/xuzeyu/HXPhotoPickerObjC.git'
+//包含SDWebImage依赖
+pod 'HXPhotoPickerObjC/SDWebImage', :git => 'https://github.com/xuzeyu/HXPhotoPickerObjC.git'
 ```
 
 ## 修改

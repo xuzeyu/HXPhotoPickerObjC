@@ -111,8 +111,8 @@
     [self.contentView addSubview:self.imageView];
     [self.contentView addSubview:self.bottomMaskView];
     [self.contentView addSubview:self.stateLb];
-    [self.contentView addSubview:self.deleteBtn];
     [self.contentView addSubview:self.progressView];
+    [self.contentView addSubview:self.deleteBtn];
     [self.contentView addSubview:self.highlightMaskView];
 }
 
